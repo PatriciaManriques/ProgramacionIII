@@ -2,6 +2,7 @@ package clasesVeterinaria;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import javax.persistence.*;
 
@@ -18,7 +19,10 @@ public class VacunaColocada implements Serializable {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="vacunaColocada_seq") 
 	private long idVacuna;
 	private LocalDate fechaColocacion;
+
+	@ManyToOne
 	private Enfermedad enfermedad;
+	
 	private static final long serialVersionUID = 1L;
 
 	public VacunaColocada() {

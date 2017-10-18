@@ -18,9 +18,12 @@ public class EnfermedadPaciente implements Serializable {
 	   
 	@Id
 	private long idEnfermedadPaciente;
+	@ManyToOne
 	private Enfermedad enfermedad;
-	private LocalDate fechaEnfermedad;
 	private ArrayList<Medicacion> medicacion;
+	
+	private LocalDate fechaEnfermedad;
+
 	private static final long serialVersionUID = 1L;
 
 	public EnfermedadPaciente() {

@@ -23,7 +23,10 @@ public class Domicilio implements Serializable {
 	private Integer numero;
 	private Integer piso;
 	private String depto;
+	
+	@ManyToOne
 	private Localidad localidad;
+	
 	private static final long serialVersionUID = 1L;
 
 	public Domicilio() {

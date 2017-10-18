@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.lang.String;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -20,13 +21,27 @@ public class Paciente implements Serializable {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="paciente_seq") 
 	private long idPaciente;
 	private String alias;
+	
+	@ManyToOne
 	private Raza raza;
+	@ManyToOne
+	private Cliente dueño;
+	
+	@OneToMany()
+	private List<VacunaColocada> vacunas;
+	
+	@OneToMany()
+	private List<EnfermedadPaciente> enfermedades;
+	
+	@OneToMany()
+	private List<Visita>visitas;
+	
 	private String colorPelo;
 	private LocalDate fechaNacimiento;
-	private Cliente dueño;
+
 	private double pesoActual;
-	private ArrayList<VacunaColocada> vacunas;
-	private ArrayList<Enfermedad> enfermedades;
+
+
 	private static final long serialVersionUID = 1L;
 
 	public Paciente() {
@@ -81,18 +96,18 @@ public class Paciente implements Serializable {
 	public void setPesoActual(double pesoActual) {
 		this.pesoActual = pesoActual;
 	}   
-	public ArrayList<VacunaColocada> getVacunas() {
+	public List<VacunaColocada> getVacunas() {
 		return this.vacunas;
 	}
 
-	public void setVacunas(ArrayList<VacunaColocada> vacunas) {
+	public void setVacunas(List<VacunaColocada> vacunas) {
 		this.vacunas = vacunas;
 	}   
-	public ArrayList<Enfermedad> getEnfermedades() {
+	public List<EnfermedadPaciente> getEnfermedades() {
 		return this.enfermedades;
 	}
 
-	public void setEnfermedades(ArrayList<Enfermedad> enfermedades) {
+	public void setEnfermedades(List<EnfermedadPaciente> enfermedades) {
 		this.enfermedades = enfermedades;
 	}
    

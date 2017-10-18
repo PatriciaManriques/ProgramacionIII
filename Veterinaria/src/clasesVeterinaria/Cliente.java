@@ -19,10 +19,13 @@ public class Cliente implements Serializable {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="cliente_seq") 
 	private long idCliente;
 	private String apellidoFamilia;
-	private Domicilio domicilio;
 	private String nroCuenta;
 	private String telefono;
 	private ArrayList<Paciente> listaMascotas;
+	
+	@ManyToOne
+	private Domicilio domicilio;
+
 	private static final long serialVersionUID = 1L;
 
 	public Cliente() {
