@@ -20,6 +20,8 @@ public class EnfermedadPaciente implements Serializable {
 	private long idEnfermedadPaciente;
 	@ManyToOne
 	private Enfermedad enfermedad;
+	
+	@OneToMany()
 	private ArrayList<Medicacion> medicacion;
 	
 	private LocalDate fechaEnfermedad;

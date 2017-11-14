@@ -24,8 +24,9 @@ public class Paciente implements Serializable {
 	
 	@ManyToOne
 	private Raza raza;
+	
 	@ManyToOne
-	private Cliente dueño;
+	private Cliente duenio;
 	
 	@OneToMany()
 	private List<VacunaColocada> vacunas;
@@ -82,12 +83,12 @@ public class Paciente implements Serializable {
 	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}   
-	public Cliente getDueño() {
-		return this.dueño;
+	public Cliente getDuenio() {
+		return this.duenio;
 	}
 
-	public void setDueño(Cliente dueño) {
-		this.dueño = dueño;
+	public void setDuenio(Cliente duenio) {
+		this.duenio = duenio;
 	}   
 	public double getPesoActual() {
 		return this.pesoActual;

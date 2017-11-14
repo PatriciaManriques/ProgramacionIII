@@ -21,6 +21,8 @@ public class Cliente implements Serializable {
 	private String apellidoFamilia;
 	private String nroCuenta;
 	private String telefono;
+	
+	@OneToMany(mappedBy="duenio")
 	private ArrayList<Paciente> listaMascotas;
 	
 	@ManyToOne
